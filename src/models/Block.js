@@ -5,14 +5,22 @@ export const DIFFICULTY = 2
 class Block {
   // 1. 完成构造函数及其参数
 
-  constructor() {}
+  constructor(ructor(timestamp, transactions, previousHash, nonce = 0) {
+    this.timestamp = timestamp;
+    this.transactions = transactions;
+    this.previousHash = previousHash;
+    this.nonce = nonce;
+    this.hash = this._setHash();
+  }
 
   isValid() {}
 
   setNonce(nonce) {}
 
   // 根据交易变化更新区块 hash
-  _setHash() {}
+  _setHash() {
+    return sha256(this.previousHash + this.timestamp + JSON.stringify(this.transactions) + this.nonce).toString();
+  }
 
   // 汇总计算交易的 Hash 值
   /**
