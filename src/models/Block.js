@@ -4,8 +4,7 @@ export const DIFFICULTY = 2
 
 class Block {
   // 1. 完成构造函数及其参数
-
-  constructor(ructor(timestamp, transactions, previousHash, nonce = 0) {
+  constructor(timestamp, transactions, previousHash, nonce = 0) {
     this.timestamp = timestamp;
     this.transactions = transactions;
     this.previousHash = previousHash;
@@ -37,7 +36,7 @@ class Block {
 
   // 添加签名校验逻辑
   isValidTransaction(transaction) {
-    
+
   }
 }
 
